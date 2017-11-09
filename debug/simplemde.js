@@ -17010,6 +17010,17 @@ function extend(target) {
 	return target;
 }
 
+function escapeRegExp(text) {
+	return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+}
+
+function stringCount(str, substr) {
+	try {
+		return str.match(new RegExp(escapeRegExp(substr), "gi")).length;
+	} catch(err) {
+		return 0;
+	}
+}
 /* The right word count in respect for CJK. */
 function wordCount(data) {
 	var pattern = /[a-zA-Z0-9_\u0392-\u03c9\u0410-\u04F9]+|[\u4E00-\u9FFF\u3400-\u4dbf\uf900-\ufaff\u3040-\u309f\uac00-\ud7af]+/g;
@@ -17290,7 +17301,7 @@ function SimpleMDE(options) {
 
 	// Handle status bar
 	if(!options.hasOwnProperty("status")) {
-		options.status = ["autosave", "lines", "words", "cursor"];
+		options.status = ["autosave", "completed", "lines", "words", "cursor"];
 	}
 
 
@@ -17764,7 +17775,24 @@ SimpleMDE.prototype.createStatusbar = function (status) {
 		} else {
 			var name = status[i];
 
-			if(name === "words") {
+			if(name === "completed") {
+				defaultValue = function (el) {
+					var complete = stringCount(cm.getValue(), "* [x]");
+					var incomplete = stringCount(cm.getValue(), "* [ ]");
+					var total = complete + incomplete;
+					if(total > 0) {
+						el.innerHTML = "<i class=\"fa fa-check-square-o\"></i>" + complete + " of " + total;
+					}
+				};
+				onUpdate = function (el) {
+					var complete = stringCount(cm.getValue(), "* [x]");
+					var incomplete = stringCount(cm.getValue(), "* [ ]");
+					var total = complete + incomplete;
+					if(total > 0) {
+						el.innerHTML = "<i class=\"fa fa-check-square-o\"></i>" + complete + " of " + total;
+					}
+				};
+			} else if(name === "words") {
 				defaultValue = function (el) {
 					el.innerHTML = wordCount(cm.getValue());
 				};
