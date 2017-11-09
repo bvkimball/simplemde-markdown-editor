@@ -60,7 +60,7 @@ var shortcuts = {
 	"toggleFullScreen": "F11"
 };
 
-var getBindingName = function(f) {
+var getBindingName = function (f) {
 	for(var key in bindings) {
 		if(bindings[key] === f) {
 			return key;
@@ -69,10 +69,10 @@ var getBindingName = function(f) {
 	return null;
 };
 
-var isMobile = function() {
+var isMobile = function () {
 	var check = false;
-	(function(a) {
-		if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
+	(function (a) {
+		if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true; // eslint-disable-line
 	})(navigator.userAgent || navigator.vendor || window.opera);
 	return check;
 };
@@ -171,7 +171,7 @@ function getState(cm, pos) {
 			ret.link = true;
 		} else if(data === "tag") {
 			ret.image = true;
-		} else if(data.match(/^header(\-[1-6])?$/)) {
+		} else if(data.match(/^header(\-[1-6])?$/)) { // eslint-disable-line
 			ret[data.replace("header", "heading")] = true;
 		}
 	}
@@ -397,7 +397,7 @@ function toggleCodeBlock(editor) {
 				// full last line selected, putting cursor at beginning of next
 				end_line -= 1;
 			}
-			cm.operation(function() {
+			cm.operation(function () {
 				// end line first, so that line numbers don't change
 				cm.replaceRange(end_text, {
 					line: end_line,
@@ -451,7 +451,7 @@ function toggleCodeBlock(editor) {
 					}
 				}
 			}
-			cm.operation(function() {
+			cm.operation(function () {
 				cm.replaceRange("", {
 					line: block_start,
 					ch: 0
@@ -704,7 +704,7 @@ function toggleSideBySide(editor) {
 		// When the preview button is clicked for the first time,
 		// give some time for the transition from editor.css to fire and the view to slide from right to left,
 		// instead of just appearing.
-		setTimeout(function() {
+		setTimeout(function () {
 			if(!cm.getOption("fullScreen"))
 				toggleFullScreen(editor);
 			preview.className += " editor-preview-active-side";
@@ -726,7 +726,7 @@ function toggleSideBySide(editor) {
 		toolbar_div.className = toolbar_div.className.replace(/\s*disabled-for-preview*/g, "");
 	}
 
-	var sideBySideRenderingFunction = function() {
+	var sideBySideRenderingFunction = function () {
 		preview.innerHTML = editor.options.previewRender(editor.value(), preview);
 	};
 
@@ -772,7 +772,7 @@ function togglePreview(editor) {
 		// When the preview button is clicked for the first time,
 		// give some time for the transition from editor.css to fire and the view to slide from right to left,
 		// instead of just appearing.
-		setTimeout(function() {
+		setTimeout(function () {
 			preview.className += " editor-preview-active";
 		}, 1);
 		if(toolbar) {
@@ -829,7 +829,7 @@ function _toggleHeading(cm, direction, size) {
 	var startPoint = cm.getCursor("start");
 	var endPoint = cm.getCursor("end");
 	for(var i = startPoint.line; i <= endPoint.line; i++) {
-		(function(i) {
+		(function (i) {
 			var text = cm.getLine(i);
 			var currHeadingLevel = text.search(/[^#]/);
 
@@ -900,8 +900,8 @@ function _toggleLine(cm, name) {
 	var startPoint = cm.getCursor("start");
 	var endPoint = cm.getCursor("end");
 	var repl = {
-		"quote": /^(\s*)\>\s+/,
-		"unordered-list": /^(\s*)(\*|\-|\+)\s+/,
+		"quote": /^(\s*)\>\s+/, // eslint-disable-line
+		"unordered-list": /^(\s*)(\*|\-|\+)\s+/, // eslint-disable-line
 		"ordered-list": /^(\s*)\d+\.\s+/
 	};
 	var map = {
@@ -910,7 +910,7 @@ function _toggleLine(cm, name) {
 		"ordered-list": "1. "
 	};
 	for(var i = startPoint.line; i <= endPoint.line; i++) {
-		(function(i) {
+		(function (i) {
 			var text = cm.getLine(i);
 			if(stat[name]) {
 				text = text.replace(repl[name], "$1");
@@ -1008,7 +1008,7 @@ function _cleanBlock(cm) {
 
 	for(var line = startPoint.line; line <= endPoint.line; line++) {
 		text = cm.getLine(line);
-		text = text.replace(/^[ ]*([# ]+|\*|\-|[> ]+|[0-9]+(.|\)))[ ]*/, "");
+		text = text.replace(/^[ ]*([# ]+|\*|\-|[> ]+|[0-9]+(.|\)))[ ]*/, ""); // eslint-disable-line
 
 		cm.replaceRange(text, {
 			line: line,
@@ -1336,7 +1336,7 @@ function SimpleMDE(options) {
 
 	// Add default preview rendering function
 	if(!options.previewRender) {
-		options.previewRender = function(plainText) {
+		options.previewRender = function (plainText) {
 			// Note: "this" refers to the options object
 			return this.parent.markdown(plainText);
 		};
@@ -1389,7 +1389,7 @@ function SimpleMDE(options) {
 /**
  * Default markdown render.
  */
-SimpleMDE.prototype.markdown = function(text) {
+SimpleMDE.prototype.markdown = function (text) {
 	if(marked) {
 		// Initialize
 		var markedOptions = {};
@@ -1403,9 +1403,33 @@ SimpleMDE.prototype.markdown = function(text) {
 		}
 
 		if(this.options && this.options.renderingConfig && this.options.renderingConfig.codeSyntaxHighlighting === true && window.hljs) {
-			markedOptions.highlight = function(code) {
+			markedOptions.highlight = function (code) {
 				return window.hljs.highlightAuto(code).value;
 			};
+		}
+
+		if(this.options && this.options.renderingConfig && this.options.renderingConfig.tasklist === true) {
+			var _markedRender = new marked.Renderer();
+			// _markedRender.code = (code: any, language: any) => {
+			//   let validLang = !!(language && hljs.getLanguage(language));
+			//   let highlighted = validLang ? hljs.highlight(language, code).value : code;
+			//   return `<pre style="padding: 0; border-radius: 0;"><code class="hljs ${language}">${highlighted}</code></pre>`;
+			// };
+			// _markedRender.table = (header: string, body: string) => {
+			//   return `<table class="table table-bordered">\n<thead>\n${header}</thead>\n<tbody>\n${body}</tbody>\n</table>\n`;
+			// };
+
+			_markedRender.listitem = function (text) {
+				if(/^\s*\[[x ]\]\s*/.test(text)) {
+					text = text
+						.replace(/^\s*\[ \]\s*/, "<i class=\"fa fa-square-o\" style=\"margin: 0 0.2em 0.25em -1.6em;\"></i> ")
+						.replace(/^\s*\[x\]\s*/, "<i class=\"fa fa-check-square\" style=\"margin: 0 0.2em 0.25em -1.6em;\"></i> ");
+					return "<li style=\"list-style: none;\">" + text + "</li>";
+				} else {
+					return "<li>" + text + "</li>";
+				}
+			};
+			markedOptions.renderer = _markedRender;
 		}
 
 
@@ -1421,7 +1445,7 @@ SimpleMDE.prototype.markdown = function(text) {
 /**
  * Render editor to the given element.
  */
-SimpleMDE.prototype.render = function(el) {
+SimpleMDE.prototype.render = function (el) {
 	if(!el) {
 		el = this.element || document.getElementsByTagName("textarea")[0];
 	}
@@ -1440,8 +1464,8 @@ SimpleMDE.prototype.render = function(el) {
 	for(var key in options.shortcuts) {
 		// null stands for "do not bind this command"
 		if(options.shortcuts[key] !== null && bindings[key] !== null) {
-			(function(key) {
-				keyMaps[fixShortcut(options.shortcuts[key])] = function() {
+			(function (key) {
+				keyMaps[fixShortcut(options.shortcuts[key])] = function () {
 					bindings[key](self);
 				};
 			})(key);
@@ -1451,11 +1475,11 @@ SimpleMDE.prototype.render = function(el) {
 	keyMaps["Enter"] = "newlineAndIndentContinueMarkdownList";
 	keyMaps["Tab"] = "tabAndIndentMarkdownList";
 	keyMaps["Shift-Tab"] = "shiftTabAndUnindentMarkdownList";
-	keyMaps["Esc"] = function(cm) {
+	keyMaps["Esc"] = function (cm) {
 		if(cm.getOption("fullScreen")) toggleFullScreen(self);
 	};
 
-	document.addEventListener("keydown", function(e) {
+	document.addEventListener("keydown", function (e) {
 		e = e || window.event;
 
 		if(e.keyCode == 27) {
@@ -1497,7 +1521,7 @@ SimpleMDE.prototype.render = function(el) {
 
 	if(options.forceSync === true) {
 		var cm = this.codemirror;
-		cm.on("change", function() {
+		cm.on("change", function () {
 			cm.save();
 		});
 	}
@@ -1521,7 +1545,7 @@ SimpleMDE.prototype.render = function(el) {
 
 	// Fixes CodeMirror bug (#344)
 	var temp_cm = this.codemirror;
-	setTimeout(function() {
+	setTimeout(function () {
 		temp_cm.refresh();
 	}.bind(temp_cm), 0);
 };
@@ -1542,7 +1566,7 @@ function isLocalStorageAvailable() {
 	return true;
 }
 
-SimpleMDE.prototype.autosave = function() {
+SimpleMDE.prototype.autosave = function () {
 	if(isLocalStorageAvailable()) {
 		var simplemde = this;
 
@@ -1552,7 +1576,7 @@ SimpleMDE.prototype.autosave = function() {
 		}
 
 		if(simplemde.element.form != null && simplemde.element.form != undefined) {
-			simplemde.element.form.addEventListener("submit", function() {
+			simplemde.element.form.addEventListener("submit", function () {
 				localStorage.removeItem("smde_" + simplemde.options.autosave.uniqueId);
 			});
 		}
@@ -1587,7 +1611,7 @@ SimpleMDE.prototype.autosave = function() {
 			el.innerHTML = "Autosaved: " + h + ":" + m + " " + dd;
 		}
 
-		this.autosaveTimeoutId = setTimeout(function() {
+		this.autosaveTimeoutId = setTimeout(function () {
 			simplemde.autosave();
 		}, this.options.autosave.delay || 10000);
 	} else {
@@ -1595,7 +1619,7 @@ SimpleMDE.prototype.autosave = function() {
 	}
 };
 
-SimpleMDE.prototype.clearAutosavedValue = function() {
+SimpleMDE.prototype.clearAutosavedValue = function () {
 	if(isLocalStorageAvailable()) {
 		if(this.options.autosave == undefined || this.options.autosave.uniqueId == undefined || this.options.autosave.uniqueId == "") {
 			console.log("SimpleMDE: You must set a uniqueId to clear the autosave value");
@@ -1608,7 +1632,7 @@ SimpleMDE.prototype.clearAutosavedValue = function() {
 	}
 };
 
-SimpleMDE.prototype.createSideBySide = function() {
+SimpleMDE.prototype.createSideBySide = function () {
 	var cm = this.codemirror;
 	var wrapper = cm.getWrapperElement();
 	var preview = wrapper.nextSibling;
@@ -1622,7 +1646,7 @@ SimpleMDE.prototype.createSideBySide = function() {
 	// Syncs scroll  editor -> preview
 	var cScroll = false;
 	var pScroll = false;
-	cm.on("scroll", function(v) {
+	cm.on("scroll", function (v) {
 		if(cScroll) {
 			cScroll = false;
 			return;
@@ -1635,7 +1659,7 @@ SimpleMDE.prototype.createSideBySide = function() {
 	});
 
 	// Syncs scroll  preview -> editor
-	preview.onscroll = function() {
+	preview.onscroll = function () {
 		if(pScroll) {
 			pScroll = false;
 			return;
@@ -1649,7 +1673,7 @@ SimpleMDE.prototype.createSideBySide = function() {
 	return preview;
 };
 
-SimpleMDE.prototype.createToolbar = function(items) {
+SimpleMDE.prototype.createToolbar = function (items) {
 	items = items || this.options.toolbar;
 
 	if(!items || items.length === 0) {
@@ -1699,7 +1723,7 @@ SimpleMDE.prototype.createToolbar = function(items) {
 
 
 		// Create the icon and append to the toolbar
-		(function(item) {
+		(function (item) {
 			var el;
 			if(item === "|") {
 				el = createSep();
@@ -1710,7 +1734,7 @@ SimpleMDE.prototype.createToolbar = function(items) {
 			// bind events, special for info
 			if(item.action) {
 				if(typeof item.action === "function") {
-					el.onclick = function(e) {
+					el.onclick = function (e) {
 						e.preventDefault();
 						item.action(self);
 					};
@@ -1728,11 +1752,11 @@ SimpleMDE.prototype.createToolbar = function(items) {
 	self.toolbarElements = toolbarData;
 
 	var cm = this.codemirror;
-	cm.on("cursorActivity", function() {
+	cm.on("cursorActivity", function () {
 		var stat = getState(cm);
 
 		for(var key in toolbarData) {
-			(function(key) {
+			(function (key) {
 				var el = toolbarData[key];
 				if(stat[key]) {
 					el.className += " active";
@@ -1748,7 +1772,7 @@ SimpleMDE.prototype.createToolbar = function(items) {
 	return bar;
 };
 
-SimpleMDE.prototype.createStatusbar = function(status) {
+SimpleMDE.prototype.createStatusbar = function (status) {
 	// Initialize
 	status = status || this.options.status;
 	var options = this.options;
@@ -1781,29 +1805,29 @@ SimpleMDE.prototype.createStatusbar = function(status) {
 			var name = status[i];
 
 			if(name === "words") {
-				defaultValue = function(el) {
+				defaultValue = function (el) {
 					el.innerHTML = wordCount(cm.getValue());
 				};
-				onUpdate = function(el) {
+				onUpdate = function (el) {
 					el.innerHTML = wordCount(cm.getValue());
 				};
 			} else if(name === "lines") {
-				defaultValue = function(el) {
+				defaultValue = function (el) {
 					el.innerHTML = cm.lineCount();
 				};
-				onUpdate = function(el) {
+				onUpdate = function (el) {
 					el.innerHTML = cm.lineCount();
 				};
 			} else if(name === "cursor") {
-				defaultValue = function(el) {
+				defaultValue = function (el) {
 					el.innerHTML = "0:0";
 				};
-				onUpdate = function(el) {
+				onUpdate = function (el) {
 					var pos = cm.getCursor();
 					el.innerHTML = pos.line + ":" + pos.ch;
 				};
 			} else if(name === "autosave") {
-				defaultValue = function(el) {
+				defaultValue = function (el) {
 					if(options.autosave != undefined && options.autosave.enabled === true) {
 						el.setAttribute("id", "autosaved");
 					}
@@ -1844,8 +1868,8 @@ SimpleMDE.prototype.createStatusbar = function(status) {
 		// Ensure the onUpdate is a function
 		if(typeof item.onUpdate === "function") {
 			// Create a closure around the span of the current action, then execute the onUpdate handler
-			this.codemirror.on("update", (function(el, item) {
-				return function() {
+			this.codemirror.on("update", (function (el, item) {
+				return function () {
 					item.onUpdate(el);
 				};
 			}(el, item)));
@@ -1866,7 +1890,7 @@ SimpleMDE.prototype.createStatusbar = function(status) {
 /**
  * Get or set the text content.
  */
-SimpleMDE.prototype.value = function(val) {
+SimpleMDE.prototype.value = function (val) {
 	if(val === undefined) {
 		return this.codemirror.getValue();
 	} else {
@@ -1905,74 +1929,74 @@ SimpleMDE.toggleFullScreen = toggleFullScreen;
 /**
  * Bind instance methods for exports.
  */
-SimpleMDE.prototype.toggleBold = function() {
+SimpleMDE.prototype.toggleBold = function () {
 	toggleBold(this);
 };
-SimpleMDE.prototype.toggleItalic = function() {
+SimpleMDE.prototype.toggleItalic = function () {
 	toggleItalic(this);
 };
-SimpleMDE.prototype.toggleStrikethrough = function() {
+SimpleMDE.prototype.toggleStrikethrough = function () {
 	toggleStrikethrough(this);
 };
-SimpleMDE.prototype.toggleBlockquote = function() {
+SimpleMDE.prototype.toggleBlockquote = function () {
 	toggleBlockquote(this);
 };
-SimpleMDE.prototype.toggleHeadingSmaller = function() {
+SimpleMDE.prototype.toggleHeadingSmaller = function () {
 	toggleHeadingSmaller(this);
 };
-SimpleMDE.prototype.toggleHeadingBigger = function() {
+SimpleMDE.prototype.toggleHeadingBigger = function () {
 	toggleHeadingBigger(this);
 };
-SimpleMDE.prototype.toggleHeading1 = function() {
+SimpleMDE.prototype.toggleHeading1 = function () {
 	toggleHeading1(this);
 };
-SimpleMDE.prototype.toggleHeading2 = function() {
+SimpleMDE.prototype.toggleHeading2 = function () {
 	toggleHeading2(this);
 };
-SimpleMDE.prototype.toggleHeading3 = function() {
+SimpleMDE.prototype.toggleHeading3 = function () {
 	toggleHeading3(this);
 };
-SimpleMDE.prototype.toggleCodeBlock = function() {
+SimpleMDE.prototype.toggleCodeBlock = function () {
 	toggleCodeBlock(this);
 };
-SimpleMDE.prototype.toggleUnorderedList = function() {
+SimpleMDE.prototype.toggleUnorderedList = function () {
 	toggleUnorderedList(this);
 };
-SimpleMDE.prototype.toggleOrderedList = function() {
+SimpleMDE.prototype.toggleOrderedList = function () {
 	toggleOrderedList(this);
 };
-SimpleMDE.prototype.cleanBlock = function() {
+SimpleMDE.prototype.cleanBlock = function () {
 	cleanBlock(this);
 };
-SimpleMDE.prototype.drawLink = function() {
+SimpleMDE.prototype.drawLink = function () {
 	drawLink(this);
 };
-SimpleMDE.prototype.drawImage = function() {
+SimpleMDE.prototype.drawImage = function () {
 	drawImage(this);
 };
-SimpleMDE.prototype.drawTable = function() {
+SimpleMDE.prototype.drawTable = function () {
 	drawTable(this);
 };
-SimpleMDE.prototype.drawHorizontalRule = function() {
+SimpleMDE.prototype.drawHorizontalRule = function () {
 	drawHorizontalRule(this);
 };
-SimpleMDE.prototype.undo = function() {
+SimpleMDE.prototype.undo = function () {
 	undo(this);
 };
-SimpleMDE.prototype.redo = function() {
+SimpleMDE.prototype.redo = function () {
 	redo(this);
 };
-SimpleMDE.prototype.togglePreview = function() {
+SimpleMDE.prototype.togglePreview = function () {
 	togglePreview(this);
 };
-SimpleMDE.prototype.toggleSideBySide = function() {
+SimpleMDE.prototype.toggleSideBySide = function () {
 	toggleSideBySide(this);
 };
-SimpleMDE.prototype.toggleFullScreen = function() {
+SimpleMDE.prototype.toggleFullScreen = function () {
 	toggleFullScreen(this);
 };
 
-SimpleMDE.prototype.isPreviewActive = function() {
+SimpleMDE.prototype.isPreviewActive = function () {
 	var cm = this.codemirror;
 	var wrapper = cm.getWrapperElement();
 	var preview = wrapper.lastChild;
@@ -1980,7 +2004,7 @@ SimpleMDE.prototype.isPreviewActive = function() {
 	return /editor-preview-active/.test(preview.className);
 };
 
-SimpleMDE.prototype.isSideBySideActive = function() {
+SimpleMDE.prototype.isSideBySideActive = function () {
 	var cm = this.codemirror;
 	var wrapper = cm.getWrapperElement();
 	var preview = wrapper.nextSibling;
@@ -1988,19 +2012,19 @@ SimpleMDE.prototype.isSideBySideActive = function() {
 	return /editor-preview-active-side/.test(preview.className);
 };
 
-SimpleMDE.prototype.isFullscreenActive = function() {
+SimpleMDE.prototype.isFullscreenActive = function () {
 	var cm = this.codemirror;
 
 	return cm.getOption("fullScreen");
 };
 
-SimpleMDE.prototype.getState = function() {
+SimpleMDE.prototype.getState = function () {
 	var cm = this.codemirror;
 
 	return getState(cm);
 };
 
-SimpleMDE.prototype.toTextArea = function() {
+SimpleMDE.prototype.toTextArea = function () {
 	var cm = this.codemirror;
 	var wrapper = cm.getWrapperElement();
 
