@@ -17777,16 +17777,16 @@ SimpleMDE.prototype.createStatusbar = function (status) {
 
 			if(name === "completed") {
 				defaultValue = function (el) {
-					var complete = stringCount(cm.getValue(), "* [x]");
-					var incomplete = stringCount(cm.getValue(), "* [ ]");
+					var complete = stringCount(cm.getValue(), "* [x]") + stringCount(cm.getValue(), "- [x]");
+					var incomplete = stringCount(cm.getValue(), "* [ ]") + stringCount(cm.getValue(), "- [ ]");
 					var total = complete + incomplete;
 					if(total > 0) {
 						el.innerHTML = "<i class=\"fa fa-check-square-o\"></i>" + complete + " of " + total;
 					}
 				};
 				onUpdate = function (el) {
-					var complete = stringCount(cm.getValue(), "* [x]");
-					var incomplete = stringCount(cm.getValue(), "* [ ]");
+					var complete = stringCount(cm.getValue(), "* [x]") + stringCount(cm.getValue(), "- [x]");
+					var incomplete = stringCount(cm.getValue(), "* [ ]") + stringCount(cm.getValue(), "- [ ]");
 					var total = complete + incomplete;
 					if(total > 0) {
 						el.innerHTML = "<i class=\"fa fa-check-square-o\"></i>" + complete + " of " + total;
